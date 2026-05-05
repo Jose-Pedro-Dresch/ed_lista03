@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Player.hpp"
 
-const int MAX_PLAYERS = 100000;
+const int MAX_PLAYERS = 100;
 
 class Matchmaking {
 

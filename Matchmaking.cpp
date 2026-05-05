@@ -1,6 +1,7 @@
 #include "Player.hpp"
 #include "Matchmaking.hpp"
 #include <iostream>
+using namespace std;
 
 Matchmaking::Matchmaking(){
     size = 0;
@@ -22,7 +23,7 @@ bool Matchmaking::insert(Player player){
 bool Matchmaking::removePlayer(int id){
     for(int i = 0; i < size; i++){
         if(players[i].getId() == id){
-            for(int j = i; i < size; j++){
+            for(int j = i; j < size; j++){
                 players[j] = players[j+1];
             }
             size--;
@@ -55,11 +56,30 @@ void Matchmaking::sortByScoreInsertion(){
 void Matchmaking::sortByScoreMerge(){}
 
 Player* Matchmaking::formGroup(int groupSize, int delta, int* n){
-    return nullptr;
+    return nullptr;    
 }
 
 Player* Matchmaking::getWaitingPlayers(int* n){
-    return nullptr;
+    *n = size;
+    if(*n == 0){
+        return nullptr;
+    }
+
+    Player* plays = new Player[size];
+    for(int i = 0; i < *n; i++){
+        plays[i] = players[i];
+    }
+    return plays;
 }
 
-void Matchmaking::printWaitingPlayers(){}
+void Matchmaking::printWaitingPlayers(){
+    if(size == 0){
+        cout << "(empty)";
+    } else {
+        cout << "Waiting Players: \n";
+        for(int i = 0; i < size; i++){
+            Player p = players[i];
+            cout << "[ " << p.getId() << " | " << p.getName() << " | " << p.getScore() << " | " << p.getTimestamp() << " ]" <<endl;
+        }
+    }
+}

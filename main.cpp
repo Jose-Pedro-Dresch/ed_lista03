@@ -13,7 +13,7 @@ int main(){
 
    //m.removePlayer(2);
 
-   m.sortByScoreInsertion();
+   m.sortByScoreMerge();
    m.printWaitingPlayers();
 
 
@@ -21,7 +21,10 @@ int main(){
    Player* players = m.getWaitingPlayers(&n);
 
    for(int i = 0; i < n; i++){
-      cout <<players[i].getId() << " " << players[i].getName() << endl;
+      cout << "id: " << players[i].getId() << 
+      " | Name:" << players[i].getName() << 
+      " | Score:" << players[i].getScore() <<
+      " | Timestamp:" << players[i].getTimestamp() << endl;
    }
 
    delete[] players;

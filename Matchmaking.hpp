@@ -30,6 +30,9 @@ public:
 
     // Outros métodos auxiliares, se necessário
 
+    Player* merge(Player arr1[], int m1, Player arr2[], int m2);
+    Player* mergeSort(Player* plays, int n);
+
     // getters
     //Player* getPlayers();
     //int& getSize();

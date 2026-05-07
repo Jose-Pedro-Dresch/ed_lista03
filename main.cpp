@@ -19,15 +19,17 @@ int main(){
 
    int n; 
    Player* players = m.getWaitingPlayers(&n);
-
    for(int i = 0; i < n; i++){
       cout << "id: " << players[i].getId() << 
       " | Name:" << players[i].getName() << 
       " | Score:" << players[i].getScore() <<
       " | Timestamp:" << players[i].getTimestamp() << endl;
    }
-
    delete[] players;
+
+   int n1;
+   m.formGroup(4, 150, &n1);
+
 
    return 0;
 }

@@ -16,14 +16,12 @@ bool Matchmaking::insert(Player player){
     } else {
         return false;
     }
-
-    return true;
 }
 
 bool Matchmaking::removePlayer(int id){
     for(int i = 0; i < size; i++){
         if(players[i].getId() == id){
-            for(int j = i; j < size; j++){
+            for(int j = i; j < size-1; j++){
                 players[j] = players[j+1];
             }
             size--;
@@ -101,12 +99,8 @@ void Matchmaking::sortByScoreMerge(){
     if(size == 0 || size == 1){
         return;
     }
-    Player* aux  = new Player[size];
-    for(int i = 0; i < size; i++){
-        aux[i] = players[i];
-    }
+    Player* aux  = mergeSort(players, size);
 
-    aux = mergeSort(aux, size);
     for(int i = 0; i < size; i++){
         players[i] = aux[i];
     }
@@ -115,7 +109,24 @@ void Matchmaking::sortByScoreMerge(){
 }
 
 Player* Matchmaking::formGroup(int groupSize, int delta, int* n){
-    return nullptr;    
+    if(size == 0 || groupSize > size){
+        *n = 0;
+        return nullptr;
+    }
+    for(int i = 0; i<size-groupSize+1; i++){
+        if((players[i+groupSize-1].getScore() - players[i].getScore()) <= delta){
+            cout << "Grupo formado com sucesso!";
+            Player* group = new Player[groupSize];
+            for(int j = i; j<=i+groupSize-1;j++){
+                group[j-i] = players[j];
+                this->removePlayer(players[j].getId());
+            }
+            *n = groupSize;
+            return group;
+        }
+    }
+    *n = 0;
+    return nullptr;
 }
 
 Player* Matchmaking::getWaitingPlayers(int* n){

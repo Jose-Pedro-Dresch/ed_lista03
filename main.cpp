@@ -7,8 +7,8 @@ int main(){
 
    m.insert(Player(1, "Ana", 1000, 1));
    m.insert(Player(2, "Bruno", 1100, 2));
-   m.insert(Player(3, "Carla", 1020, 3));
-   m.insert(Player(4, "Dario", 900, 4));
+   m.insert(Player(3, "Carla", 1110, 3));
+   m.insert(Player(4, "Dario", 1050, 4));
    m.insert(Player(5, "Enpada", 900, 5));
 
    //m.removePlayer(2);
@@ -28,8 +28,9 @@ int main(){
    delete[] players;
 
    int n1;
-   m.formGroup(4, 150, &n1);
+   m.formGroup(2, 10, &n1);
 
+   m.printWaitingPlayers();
 
    return 0;
 }

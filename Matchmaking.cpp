@@ -115,12 +115,18 @@ Player* Matchmaking::formGroup(int groupSize, int delta, int* n){
     }
     for(int i = 0; i<size-groupSize+1; i++){
         if((players[i+groupSize-1].getScore() - players[i].getScore()) <= delta){
-            cout << "Grupo formado com sucesso!";
+            cout << "Grupo formado com sucesso!\n";
             Player* group = new Player[groupSize];
             for(int j = i; j<=i+groupSize-1;j++){
                 group[j-i] = players[j];
-                this->removePlayer(players[j].getId());
+                //this->removePlayer(players[j].getId());
             }
+
+            for(int k = i; k < size - groupSize; k++){
+                players[k] = players[k+groupSize];
+            }
+            size-=groupSize;
+
             *n = groupSize;
             return group;
         }

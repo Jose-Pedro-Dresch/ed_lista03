@@ -39,6 +39,7 @@
 *.out
 *.app
 /matchmaking
+/desempenho_test
 
 # Build directories
 build/

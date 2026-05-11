@@ -145,7 +145,6 @@ Player *Matchmaking::formGroup(int groupSize, int delta, int *n)
             for (int j = i; j <= i + groupSize - 1; j++)
             {
                 group[j - i] = players[j];
-                // this->removePlayer(players[j].getId());
             }
 
             for (int k = i; k < size - groupSize; k++)

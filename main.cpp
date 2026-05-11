@@ -26,7 +26,9 @@ int main()
    delete[] players;
 
    int n1;
-   m.formGroup(2, 10, &n1);
+   m.formGroup(1, 10, &n1);
+
+   cout << "Número de pessoas no grupo (ou 0 se não foi possível montá-lo): " << n1 << endl;
 
    m.printWaitingPlayers();
 

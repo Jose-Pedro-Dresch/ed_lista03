@@ -115,7 +115,7 @@ Player *Matchmaking::mergeSort(Player *plays, int n)
 
 void Matchmaking::sortByScoreMerge()
 {
-    if (size == 0 || size == 1)
+    if (size == 0)
     {
         return;
     }

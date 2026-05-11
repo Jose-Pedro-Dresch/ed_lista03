@@ -1,7 +1,8 @@
 #pragma once
 #include <iostream>
 
-class Player {
+class Player
+{
 
 private:
     int id;
@@ -10,7 +11,6 @@ private:
     int timestamp;
 
 public:
-
     Player();
     Player(int id, std::string name, int score, int timestamp);
     ~Player();

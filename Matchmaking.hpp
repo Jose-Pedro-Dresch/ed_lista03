@@ -4,15 +4,14 @@
 
 const int MAX_PLAYERS = 43169;
 
-class Matchmaking {
+class Matchmaking
+{
 
 private:
-    
     Player players[MAX_PLAYERS];
     int size;
 
 public:
-
     Matchmaking();
     ~Matchmaking();
 
@@ -22,19 +21,14 @@ public:
     void sortByScoreInsertion();
     void sortByScoreMerge();
 
-    Player* formGroup(int groupSize, int delta, int* n);
+    Player *formGroup(int groupSize, int delta, int *n);
 
-    Player* getWaitingPlayers(int* n);
+    Player *getWaitingPlayers(int *n);
 
     void printWaitingPlayers();
 
     // Outros métodos auxiliares, se necessário
 
-    Player* merge(Player arr1[], int m1, Player arr2[], int m2);
-    Player* mergeSort(Player* plays, int n);
-
-    // getters
-    //Player* getPlayers();
-    //int& getSize();
-
+    Player *merge(Player arr1[], int m1, Player arr2[], int m2);
+    Player *mergeSort(Player *plays, int n);
 };

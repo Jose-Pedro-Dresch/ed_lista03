@@ -3,12 +3,11 @@
 #include <iostream>
 using namespace std;
 
-
 // Construtor padrão de um sistema de Matchmaking
 // É inicializado com size = 0
 Matchmaking::Matchmaking()
 {
-    players = new Player[MAX_PLAYERS];
+    players = new Player[MAX_PLAYERS]; // Array de players alocado dinamicamente 
     size = 0;
 }
 

@@ -3,7 +3,7 @@
 #include "Player.hpp"
 
 // Constante que define a capacidade máxima de jogadores
-const int MAX_PLAYERS = 100000;
+
 
 /**
     * Classe representando um sistema de matchmaking, 
@@ -17,7 +17,8 @@ class Matchmaking
 {
 
 private:
-    Player players[MAX_PLAYERS]; // Contém um array de jogadores com capacidade MAX_PLAYERS
+    const int MAX_PLAYERS = 100000;
+    Player* players; // Contém um array de jogadores com capacidade MAX_PLAYERS
     int size;
 
 public:

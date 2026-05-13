@@ -43,3 +43,8 @@ Seguimos a modelagem básica proposta para esse trabalho, dividindo o programa n
  - ```desempenho.cpp```: Arquivo responsável por gerar os testes de comparação de desempenho dos algoritmos de ordenação
 
 Como dito acima, no arquivo ```main.cpp``` há alguns testes para demonstrar o uso do sistema e sua conformidade com o que foi pedido. Ele é o arquivo do programa em si. Assim, para executá-lo e ver os resultados dos testes no seu terminal, basta seguir as instruções dadas anteriormente.
+
+
+## Observação 
+
+No modelo para a classe Matchmaking que consta no arquivo de instruções para o projeto, o array de players não é alocado dinamicamente. Por conta disso, houve problemas de esgotamento da stack ao tentar alocar memória para 100.000 jogadores quando tentamos executar os arquivos no Windows. A fim de evitar possíveis problemas, mudou-se o padrão para que o array de Players fosse alocado dinamicamente.

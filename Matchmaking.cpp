@@ -3,15 +3,19 @@
 #include <iostream>
 using namespace std;
 
+
 // Construtor padrão de um sistema de Matchmaking
 // É inicializado com size = 0
 Matchmaking::Matchmaking()
 {
+    players = new Player[MAX_PLAYERS];
     size = 0;
 }
 
 // Destrutor de um sistema de Matchmaking
-Matchmaking::~Matchmaking() {}
+Matchmaking::~Matchmaking() {
+    delete[] players;
+}
 
 // Método para inserir um novo jogador na lista de espera, 
 // caso ainda haja disponibilidade
